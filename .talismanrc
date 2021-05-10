@@ -1,0 +1,5 @@
+fileignoreconfig:
+- filename: scripts/assignments/assignment_external_module.py
+  checksum: c8c388f2d72f6930a3b777e58463bf5e2d19eaa848b72e3181c45f7ff67ef6f3
+  ignore_detectors: []
+scopeconfig: []
