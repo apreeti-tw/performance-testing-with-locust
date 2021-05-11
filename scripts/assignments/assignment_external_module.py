@@ -1,6 +1,7 @@
 from locust import SequentialTaskSet, HttpUser, task, between
 import sys
-sys.path.append('/Users/apreeti/Documents/Performance-Testing/performance-testing-with-locust/data')
+import os
+sys.path.append(os.path.expanduser('HOME')+'/Documents/Performance-Testing/performance-testing-with-locust/data')
 from data import credentials
 import re
 
