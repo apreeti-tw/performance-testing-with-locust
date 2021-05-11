@@ -1,5 +1,5 @@
 logfiles
 venv
 .idea*
-data/credentials.*
+scripts/assignments/data/credentials.*
 __pycache__/

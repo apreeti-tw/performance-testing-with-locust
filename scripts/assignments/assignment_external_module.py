@@ -2,7 +2,7 @@ from locust import SequentialTaskSet, HttpUser, task, between
 import sys
 import os
 sys.path.append(os.path.expanduser('HOME')+'/Documents/Performance-Testing/performance-testing-with-locust/data')
-from data import credentials
+from scripts.assignments.data import credentials
 import re
 
 

@@ -1,11 +1,17 @@
 from locust import SequentialTaskSet, HttpUser, task, between
 import os
+import sys
 import re
 import random
 from utilities.csv_reader import CSVReader
 
-my_reader = CSVReader(os.path.expanduser(
-    os.getenv('HOME')) + "/Documents/Performance-Testing/performance-testing-with-locust/data/credentials.csv").readCSV()
+
+root_dir = os.path.dirname(os.path.abspath(__file__))
+print(root_dir)
+sys.path.append(root_dir)
+data_folder = os.path.join(root_dir, "data")
+file_folder = os.path.join(data_folder, "credentials.csv")
+my_reader = CSVReader(file_folder).readCSV()
 
 
 class UserBehavior(SequentialTaskSet):
