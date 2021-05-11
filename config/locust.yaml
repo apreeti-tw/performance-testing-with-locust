@@ -1,0 +1,11 @@
+#For host configuration
+[locust run]
+host: http://demo.borland.com
+locustfile: scripts/assignments/assignment_read_data_from_csv.py
+
+#For headless mode
+[headless mode]
+headless: true
+users: 10
+spawn-rate: 1
+run-time: 20s

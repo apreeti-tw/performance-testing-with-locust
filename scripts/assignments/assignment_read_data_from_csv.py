@@ -115,5 +115,4 @@ class UserBehavior(SequentialTaskSet):
 
 class MyUser(HttpUser):
     wait_time = between(2, 4)
-    host = "http://demo.borland.com"
     tasks = [UserBehavior]
