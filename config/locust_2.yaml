@@ -1,7 +1,7 @@
 #For host configuration
 [locust run]
 host: http://demo.borland.com
-locustfile: scripts/assignments/assignment_read_data_from_csv.py
+locustfile: scripts/assignments/assignment_agent_lookup_logs.py
 
 #For headless mode
 [headless mode]
