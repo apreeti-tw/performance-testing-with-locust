@@ -8,3 +8,9 @@ fileignoreconfig:
   checksum: 66b87cb5fb97873966909b9b0b9a69ad7ee0a21446886b423d24dad7429085e6
   ignore_detectors: []
 scopeconfig: []
+fileignoreconfig:
+- filename: scripts/assignments/assignment_exit_test.py
+  checksum: e581aefaf57aac13726e22caa48068a71006ea119578862d7682d4b5c2e59dd7
+  ignore_detectors: []
+scopeconfig: []
+
