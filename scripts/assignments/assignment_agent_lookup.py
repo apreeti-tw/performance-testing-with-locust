@@ -46,7 +46,7 @@ class UserBehavior(SequentialTaskSet):
     def show_all_agents(self):
         with self.client.post("/InsuranceWebExtJS/agent_lookup.jsf",
                               name="show all agents",
-                              cookies={"JSESSION": self.jsession_id,
+                              cookies={"JSESSIONID": self.jsession_id,
                                        "UserSessionFilter.sessionId": self.user_filter_session},
                               data={"show-all": "show-all", "show-all:search-all.x": "42",
                                     "show-all:search-all.y": "12", "javax.faces.ViewState": self.view_state},
