@@ -2,8 +2,10 @@ import re
 import socket
 
 from locust import SequentialTaskSet, constant, HttpUser, events, task
+import locust.event
 
 hostname = socket.gethostname()
+custom_event = locust.event.EventHook()
 
 
 def success_handler(request_type, name, response_time, response_length, **kwargs):
@@ -20,8 +22,13 @@ def failure_handler(request_type, name, response_time, response_length, exceptio
     print(failure_template)
 
 
+def custom_event_handler(msg, **kwargs):
+    print(msg)
+
+
 events.request_success.add_listener(success_handler)
 events.request_failure.add_listener(failure_handler)
+custom_event.add_listener(success_handler)
 
 
 class UserBehavior(SequentialTaskSet):
@@ -35,6 +42,10 @@ class UserBehavior(SequentialTaskSet):
         resp = self.client.get("/InsuranceWebExtJS", name="launch url")
         self.jsession_id = resp.cookies["JSESSIONID"]
         self.view_state = re.findall("j_id\d+:j_id\d+", resp.text)[0]
+        if "200" in resp.text:
+            custom_event.fire("URL launched successfully")
+        else:
+            custom_event.fire("URL launch failed")
 
     @task
     def login(self):
